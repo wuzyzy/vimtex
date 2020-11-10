@@ -258,15 +258,16 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_quickfix_blgparser', {})
   call s:init_option('vimtex_quickfix_autoclose_after_keystrokes', '0')
 
+  call s:init_option('vimtex_syntax_conceal', 1)
   call s:init_option('vimtex_syntax_config', {
         \ 'conceal': {
-        \   'accents': 1,
-        \   'greek': 1,
-        \   'math_bounds': 1,
-        \   'math_delimiters': 1,
-        \   'special_chars': 1,
-        \   'styles': 1,
-        \   'super_sub': 1,
+        \   'accents': g:vimtex_syntax_conceal,
+        \   'greek': g:vimtex_syntax_conceal,
+        \   'math_bounds': g:vimtex_syntax_conceal,
+        \   'math_delimiters': g:vimtex_syntax_conceal,
+        \   'special_chars': g:vimtex_syntax_conceal,
+        \   'styles': g:vimtex_syntax_conceal,
+        \   'super_sub': g:vimtex_syntax_conceal,
         \ },
         \})
 
