@@ -258,19 +258,18 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_quickfix_blgparser', {})
   call s:init_option('vimtex_quickfix_autoclose_after_keystrokes', '0')
 
-  call s:init_option('vimtex_syntax_conceal', 1)
-  call s:init_option('vimtex_syntax_config', {
-        \ 'conceal': {
-        \   'accents': g:vimtex_syntax_conceal,
-        \   'greek': g:vimtex_syntax_conceal,
-        \   'math_bounds': g:vimtex_syntax_conceal,
-        \   'math_delimiters': g:vimtex_syntax_conceal,
-        \   'styles': g:vimtex_syntax_conceal,
-        \   'super_sub': g:vimtex_syntax_conceal,
-        \ },
-        \})
-
   call s:init_option('vimtex_syntax_enabled', 1)
+  call s:init_option('vimtex_syntax_autoload_packages', ['amsmath'])
+  call s:init_option('vimtex_syntax_conceal_default', 1)
+  call s:init_option('vimtex_syntax_conceal', {
+        \ 'accents': g:vimtex_syntax_conceal_default,
+        \ 'greek': g:vimtex_syntax_conceal_default,
+        \ 'math_bounds': g:vimtex_syntax_conceal_default,
+        \ 'math_delimiters': g:vimtex_syntax_conceal_default,
+        \ 'math_super_sub': g:vimtex_syntax_conceal_default,
+        \ 'math_symbols': g:vimtex_syntax_conceal_default,
+        \ 'styles': g:vimtex_syntax_conceal_default,
+        \})
   call s:init_option('vimtex_syntax_nested', {
         \ 'aliases' : {
         \   'C' : 'c',
@@ -296,7 +295,6 @@ function! vimtex#options#init() abort " {{{1
         \   ],
         \ }
         \})
-  call s:init_option('vimtex_syntax_autoload_packages', ['amsmath'])
   call s:init_option('vimtex_syntax_nospell_commands', [])
   call s:init_option('vimtex_syntax_packages', {
         \ 'babel': {'conceal': g:vimtex_syntax_conceal_default},
