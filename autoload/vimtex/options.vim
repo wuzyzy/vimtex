@@ -259,7 +259,6 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_quickfix_autoclose_after_keystrokes', '0')
 
   call s:init_option('vimtex_syntax_enabled', 1)
-  call s:init_option('vimtex_syntax_autoload_packages', ['amsmath'])
   call s:init_option('vimtex_syntax_conceal_default', 1)
   call s:init_option('vimtex_syntax_conceal', {
         \ 'accents': g:vimtex_syntax_conceal_default,
@@ -297,6 +296,7 @@ function! vimtex#options#init() abort " {{{1
         \})
   call s:init_option('vimtex_syntax_nospell_commands', [])
   call s:init_option('vimtex_syntax_packages', {
+        \ 'amsmath': {'load': 2},
         \ 'babel': {'conceal': g:vimtex_syntax_conceal_default},
         \})
 
@@ -433,6 +433,7 @@ function! s:check_for_deprecated_options() abort " {{{1
         \ 'g:vimtex_quickfix_ignored_warnings',
         \ 'g:vimtex_quickfix_latexlog',
         \ 'g:vimtex_quickfix_warnings',
+        \ 'g:vimtex_syntax_autoload_packages',
         \ 'g:vimtex_textidote_jar',
         \ 'g:vimtex_toc_fold',
         \ 'g:vimtex_toc_fold_level_start',
